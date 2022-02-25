@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+/* Client => pages => OrderPage, SummaryPage, CompletePage */
+import React,{useState,useEffect} from "react";
+import OrderPage from "./pages/OrderPage/OrderPage";
+import {OrderContextProvider} from "./contexts/OrderContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding:"4rem"}}>
+      <OrderContextProvider>
+        <OrderPage/>
+      </OrderContextProvider>
     </div>
   );
 }
